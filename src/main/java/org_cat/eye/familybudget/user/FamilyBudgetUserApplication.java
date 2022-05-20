@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FamilybudgetUserApplication {
+public class FamilyBudgetUserApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FamilybudgetUserApplication.class, args);
+        SpringApplication.run(FamilyBudgetUserApplication.class, args);
     }
 
 }
