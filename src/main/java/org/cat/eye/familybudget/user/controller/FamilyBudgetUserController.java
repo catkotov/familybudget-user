@@ -12,18 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/familybudget/user")
 public class FamilyBudgetUserController {
 
-    @Autowired
     UserRepository repository;
+
+    @Autowired
+    public FamilyBudgetUserController(UserRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/{nicName}")
     public FamilyBudgetUser getUser(@PathVariable String nicName) {
 
-        FamilyBudgetUser user = repository.findById(nicName).get();
-
-//        FamilyBudgetUser user = new FamilyBudgetUser();
-//        user.setNicName("cat-kotov");
-//        user.setPassword("12345");
-
+        FamilyBudgetUser user = repository.findById(nicName).orElseGet(() -> null);
         return user;
     }
 
