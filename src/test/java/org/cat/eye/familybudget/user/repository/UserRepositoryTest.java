@@ -16,14 +16,6 @@ class UserRepositoryTest {
     @Autowired
     private UserRepository repository;
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void save() {
         FamilyBudgetUser expectedUser = new FamilyBudgetUser();
