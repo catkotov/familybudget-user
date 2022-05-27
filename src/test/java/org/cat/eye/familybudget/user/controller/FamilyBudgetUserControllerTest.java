@@ -41,5 +41,4 @@ class FamilyBudgetUserControllerTest {
                 .andExpect(jsonPath("$.password", is(user.getPassword())));
     }
 
-
 }
