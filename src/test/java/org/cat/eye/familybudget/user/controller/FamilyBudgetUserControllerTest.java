@@ -10,9 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -39,6 +39,12 @@ class FamilyBudgetUserControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.nicName", is(user.getNicName())))
                 .andExpect(jsonPath("$.password", is(user.getPassword())));
+    }
+
+    @Test
+    void addUser() throws Exception {
+        mvc.perform(post("/familybudget/user/nic-nic/bla-bla-bla").contentType(MediaType.TEXT_PLAIN_VALUE))
+                .andExpect(status().isOk());
     }
 
 }
