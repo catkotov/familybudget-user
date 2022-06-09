@@ -6,7 +6,7 @@ spring:
       maximumPoolSize: 5
 ## PostgreSQL
     username: familybudget
-    password: cF-53-If
+    password: *
     url: jdbc:postgresql://localhost:5432/postgres
 ## Hibernate
   jpa:
